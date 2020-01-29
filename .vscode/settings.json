@@ -1,0 +1,76 @@
+{
+    "cSpell.language": "en,es",
+    "cSpell.userWords": [],
+    "cSpell.words": [
+        "CMXCIX",
+        "Equiman",
+        "Kata",
+        "LXXX",
+        "Parens",
+        "Prettierrc",
+        "eqeqeq",
+        "lcov"
+    ],
+    "editor.autoIndent": "full",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": true,
+    "editor.letterSpacing": 1,
+    "editor.rulers": [80,120],
+    "editor.tabSize": 2,
+    "editor.renderWhitespace": "boundary",
+    "editor.wordWrap": "off",
+    "eslint.enable": true,
+    "files.exclude": {
+        "**/node_modules": true
+    },
+    "git.autofetch": true,
+    "javascript.validate.enable": false,
+    "javascript.format.enable": false,
+    "prettier.configPath": ".prettierrc",
+    "prettier.disableLanguages": ["html", "css", "scss"],
+    "search.exclude": {
+        "**/coverage": true,
+        "**/node_modules": true,
+    },
+    "todo-tree.filtering.excludeGlobs": [
+        "**/node_modules/**",
+    ],
+    "todo-tree.filtering.includeGlobs": [
+        "**/resources/**",
+    ],
+    "todo-tree.general.tags": [
+        "TODO",
+        "FIXME",
+        "MARK"
+    ],
+    "todo-tree.highlights.defaultHighlight": {
+        "type": "tag",
+        "fontWeight": "bold",
+        "foreground": "black",
+        "opacity": 90,
+    },
+    "todo-tree.highlights.customHighlight": {
+        "TODO": {
+            "background": "#FFD703",
+            "iconColour": "#FFD703",
+            "icon": "book",
+        },
+        "FIXME": {
+            "background": "#FF01FF",
+            "iconColour": "#FF01FF",
+            "icon": "bug",
+        },
+        "MARK": {
+            "background": "#157EFB",
+            "iconColour": "#157EFB",
+            "icon": "tag",
+        }
+    },
+    "testExplorer.errorDecoration": false,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+}

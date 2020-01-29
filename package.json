@@ -1,0 +1,31 @@
+{
+  "name": "tdd_roman_js",
+  "version": "1.0.0",
+  "description": "Kata: TDD Arabic to Roman Numbers with JS and Jest",
+  "main": "resources/js/app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/equiman/tdd_roman_js.git"
+  },
+  "author": "Camilo Martinez (Equiman)",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/equiman/tdd_roman_js/issues"
+  },
+  "homepage": "https://github.com/equiman/tdd_roman_js#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "jest": "^25.1.0",
+    "prettier": "^1.19.1"
+  }
+}
