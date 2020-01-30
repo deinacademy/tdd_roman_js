@@ -16,4 +16,13 @@ describe('Arabic', () => {
     //Assert
     actual.toBe(expected);
   });
+
+  test('When Convert 2, should return II', () => {
+    //Arrange
+    const expected = 'II';
+    //Act
+    const actual = expect(convert(2));
+    //Assert
+    actual.toBe(expected);
+  });
 });
