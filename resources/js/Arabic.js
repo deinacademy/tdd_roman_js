@@ -10,8 +10,10 @@ class Arabic {
       result = 'IV';
     } else if (number === 5) {
       result = 'V';
-    } else {
+    } else if (number === 6) {
       result = 'VI';
+    } else {
+      result = 'VII';
     }
 
     if (!result) {
