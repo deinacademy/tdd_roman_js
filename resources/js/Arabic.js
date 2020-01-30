@@ -1,8 +1,13 @@
 class Arabic {
   static ConvertToRoman(number) {
     let result = '';
-    for (let i = 0; i < number; i++) {
-      result += 'I';
+
+    if (number <= 3) {
+      for (let i = 0; i < number; i++) {
+        result += 'I';
+      }
+    } else {
+      result = 'IV';
     }
 
     if (!result) {
