@@ -1,7 +1,7 @@
 module.exports = {
   verbose: true,
   collectCoverage: false,
-  collectCoverageFrom: ['**/resources/**/*.js', '!**/node_modules/**', '!**/vendor/**'],
+  collectCoverageFrom: ['**/resources/**/*.js', '!**/resources/**/app.js', '!**/node_modules/**', '!**/vendor/**'],
   coverageReporters: ['lcov'],
   coverageDirectory: '<rootDir>/coverage/',
 };
