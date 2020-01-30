@@ -6,8 +6,10 @@ class Arabic {
       for (let i = 0; i < number; i++) {
         result += 'I';
       }
-    } else {
+    } else if (number === 4) {
       result = 'IV';
+    } else {
+      result = 'V';
     }
 
     if (!result) {
