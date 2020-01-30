@@ -46,6 +46,10 @@ describe('Arabic', () => {
       number: 11,
       result: 'XI',
     },
+    {
+      number: 20,
+      result: 'XX',
+    },
   ];
 
   testCases.forEach((value) => {
