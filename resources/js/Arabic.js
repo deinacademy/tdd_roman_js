@@ -15,8 +15,10 @@ class Arabic {
       for (let i = 5; i < number; i++) {
         result += 'I';
       }
-    } else {
+    } else if (number === 9) {
       result = 'IX';
+    } else {
+      result = 'X';
     }
 
     if (!result) {
