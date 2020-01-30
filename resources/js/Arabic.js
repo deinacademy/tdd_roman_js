@@ -1,3 +1,5 @@
+const Roman = require('./Roman');
+
 class Arabic {
   static ConvertToRoman(number) {
     const hundreds = parseInt((number / 100) % 10);
@@ -5,9 +7,9 @@ class Arabic {
     const ones = parseInt((number / 1) % 10);
 
     let result = '';
-    result += this.PlaceValues(hundreds, ['C', 'D', 'M']);
-    result += this.PlaceValues(tens, ['X', 'L', 'C']);
-    result += this.PlaceValues(ones, ['I', 'V', 'X']);
+    result += this.PlaceValues(hundreds, Roman['hundreds']);
+    result += this.PlaceValues(tens, Roman['tens']);
+    result += this.PlaceValues(ones, Roman['ones']);
 
     if (!result) {
       throw new Error('Not implemented exception');
@@ -18,24 +20,24 @@ class Arabic {
 
   static PlaceValues(number, symbols) {
     if (number <= 3) {
-      return this.RepeatLiteral(number, symbols[0]);
+      return this.RepeatLiteral(number, symbols.unum);
     }
 
     if (number === 4) {
-      return `${symbols[0]}${symbols[1]}`;
+      return `${symbols.unum}${symbols.quinque}`;
     }
 
     if (number === 5) {
-      return symbols[1];
+      return symbols.quinque;
     }
 
     if (6 <= number && number <= 8) {
-      return `${symbols[1]}${this.RepeatLiteral(number - 5, symbols[0])}`;
+      return `${symbols.quinque}${this.RepeatLiteral(number - 5, symbols.unum)}`;
     }
 
     /* istanbul ignore else*/
     if (number === 9) {
-      return `${symbols[0]}${symbols[2]}`;
+      return `${symbols.unum}${symbols.decem}`;
     }
   }
 
