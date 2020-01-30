@@ -1,9 +1,11 @@
 class Arabic {
   static ConvertToRoman(number) {
+    const hundreds = parseInt((number / 100) % 10);
     const tens = parseInt((number / 10) % 10);
     const ones = parseInt((number / 1) % 10);
 
     let result = '';
+    result += this.PlaceValues(hundreds, ['C', 'D', 'M']);
     result += this.PlaceValues(tens, ['X', 'L', 'C']);
     result += this.PlaceValues(ones, ['I', 'V', 'X']);
 
