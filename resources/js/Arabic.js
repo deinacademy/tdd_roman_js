@@ -1,13 +1,15 @@
 class Arabic {
   static ConvertToRoman(number) {
-    if (number === 1) {
-      return 'I';
-    } else if (number === 2) {
-      return 'II';
-    } else {
-      return 'III';
+    let result = '';
+    for (let i = 0; i < number; i++) {
+      result += 'I';
     }
-    throw new Error('Not implemented exception');
+
+    if (!result) {
+      throw new Error('Not implemented exception');
+    }
+
+    return result;
   }
 }
 
