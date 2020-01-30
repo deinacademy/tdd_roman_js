@@ -13,8 +13,10 @@ class Arabic {
       result += this.RepeatLiteral(number - 5);
     } else if (number === 9) {
       result = 'IX';
-    } else {
+    } else if (number === 10) {
       result = 'X';
+    } else {
+      result = 'XI';
     }
 
     if (!result) {
