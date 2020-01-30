@@ -3,18 +3,14 @@ class Arabic {
     let result = '';
 
     if (number <= 3) {
-      for (let i = 0; i < number; i++) {
-        result += 'I';
-      }
+      result = this.RepeatLiteral(number);
     } else if (number === 4) {
       result = 'IV';
     } else if (number === 5) {
       result = 'V';
     } else if (6 <= number && number <= 8) {
       result = 'V';
-      for (let i = 5; i < number; i++) {
-        result += 'I';
-      }
+      result += this.RepeatLiteral(number - 5);
     } else if (number === 9) {
       result = 'IX';
     } else {
@@ -27,6 +23,14 @@ class Arabic {
 
     return result;
   }
+
+  static RepeatLiteral(times) {
+    let result = '';
+    for (let i = 0; i < times; i++) {
+      result += 'I';
+    }
+    return result;
+  }
 }
 
-export { Arabic };
+module.exports = Arabic;

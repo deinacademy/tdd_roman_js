@@ -1,13 +1,6 @@
-import { Arabic } from '../resources/js/Arabic';
+const Arabic = require('../resources/js/Arabic');
 
 describe('Arabic', () => {
-  let convert;
-
-  beforeEach(() => {
-    //Arrange
-    convert = Arabic.ConvertToRoman;
-  });
-
   const testCases = [
     {
       number: 1,
@@ -56,7 +49,7 @@ describe('Arabic', () => {
       //Arrange
       const expected = value.result;
       //Act
-      const actual = expect(convert(value.number));
+      const actual = expect(Arabic.ConvertToRoman(value.number));
       //Assert
       actual.toBe(expected);
     });
