@@ -8,21 +8,25 @@ describe('Arabic', () => {
     convert = Arabic.ConvertToRoman;
   });
 
-  test('When Convert 1, should return I', () => {
-    //Arrange
-    const expected = 'I';
-    //Act
-    const actual = expect(convert(1));
-    //Assert
-    actual.toBe(expected);
-  });
+  const testCases = [
+    {
+      number: 1,
+      result: 'I',
+    },
+    {
+      number: 2,
+      result: 'II',
+    },
+  ];
 
-  test('When Convert 2, should return II', () => {
-    //Arrange
-    const expected = 'II';
-    //Act
-    const actual = expect(convert(2));
-    //Assert
-    actual.toBe(expected);
+  testCases.forEach((value) => {
+    test(`When Convert ${value.number}, should return ${value.result}`, () => {
+      //Arrange
+      const expected = value.result;
+      //Act
+      const actual = expect(convert(value.number));
+      //Assert
+      actual.toBe(expected);
+    });
   });
 });
