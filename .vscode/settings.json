@@ -8,8 +8,10 @@
         "LXXX",
         "Parens",
         "Prettierrc",
+        "decem",
         "eqeqeq",
-        "lcov"
+        "lcov",
+        "quinque"
     ],
     "editor.autoIndent": "full",
     "editor.codeActionsOnSave": {
