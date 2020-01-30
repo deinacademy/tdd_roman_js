@@ -1,23 +1,11 @@
 class Arabic {
   static ConvertToRoman(number) {
-    let result = '';
+    const tens = parseInt((number / 10) % 10);
+    const ones = parseInt((number / 1) % 10);
 
-    if (number <= 3) {
-      result = this.RepeatLiteral(number);
-    } else if (number === 4) {
-      result = 'IV';
-    } else if (number === 5) {
-      result = 'V';
-    } else if (6 <= number && number <= 8) {
-      result = 'V';
-      result += this.RepeatLiteral(number - 5);
-    } else if (number === 9) {
-      result = 'IX';
-    } else if (number === 10) {
-      result = 'X';
-    } else {
-      result = 'XI';
-    }
+    let result = '';
+    result += this.PlaceValues(tens, ['X', 'L', 'C']);
+    result += this.PlaceValues(ones, ['I', 'V', 'X']);
 
     if (!result) {
       throw new Error('Not implemented exception');
@@ -26,10 +14,32 @@ class Arabic {
     return result;
   }
 
-  static RepeatLiteral(times) {
+  static PlaceValues(number, symbols) {
+    if (number <= 3) {
+      return this.RepeatLiteral(number, symbols[0]);
+    }
+
+    if (number === 4) {
+      return `${symbols[0]}${symbols[1]}`;
+    }
+
+    if (number === 5) {
+      return symbols[1];
+    }
+
+    if (6 <= number && number <= 8) {
+      return `${symbols[1]}${this.RepeatLiteral(number - 5, symbols[0])}`;
+    }
+
+    if (number === 9) {
+      return `${symbols[0]}${symbols[2]}`;
+    }
+  }
+
+  static RepeatLiteral(times, symbol) {
     let result = '';
     for (let i = 0; i < times; i++) {
-      result += 'I';
+      result += symbol;
     }
     return result;
   }
