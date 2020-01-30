@@ -31,6 +31,7 @@ class Arabic {
       return `${symbols[1]}${this.RepeatLiteral(number - 5, symbols[0])}`;
     }
 
+    /* istanbul ignore else*/
     if (number === 9) {
       return `${symbols[0]}${symbols[2]}`;
     }
