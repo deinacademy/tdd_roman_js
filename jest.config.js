@@ -4,4 +4,4 @@ module.exports = {
   collectCoverageFrom: ['**/resources/**/*.js', '!**/resources/**/app.js', '!**/node_modules/**', '!**/vendor/**'],
   coverageReporters: ['lcov'],
   coverageDirectory: '<rootDir>/coverage/',
-};
+}
