@@ -3,77 +3,77 @@ const Arabic = require('../resources/js/Arabic')
 describe('Arabic', () => {
   const testCases = [
     {
-      number: 1,
-      result: 'I',
+      arabic: 1,
+      roman: 'I',
     },
     {
-      number: 2,
-      result: 'II',
+      arabic: 2,
+      roman: 'II',
     },
     {
-      number: 3,
-      result: 'III',
+      arabic: 3,
+      roman: 'III',
     },
     {
-      number: 4,
-      result: 'IV',
+      arabic: 4,
+      roman: 'IV',
     },
     {
-      number: 5,
-      result: 'V',
+      arabic: 5,
+      roman: 'V',
     },
     {
-      number: 6,
-      result: 'VI',
+      arabic: 6,
+      roman: 'VI',
     },
     {
-      number: 7,
-      result: 'VII',
+      arabic: 7,
+      roman: 'VII',
     },
     {
-      number: 8,
-      result: 'VIII',
+      arabic: 8,
+      roman: 'VIII',
     },
     {
-      number: 9,
-      result: 'IX',
+      arabic: 9,
+      roman: 'IX',
     },
     {
-      number: 10,
-      result: 'X',
+      arabic: 10,
+      roman: 'X',
     },
     {
-      number: 11,
-      result: 'XI',
+      arabic: 11,
+      roman: 'XI',
     },
     {
-      number: 20,
-      result: 'XX',
+      arabic: 20,
+      roman: 'XX',
     },
     {
-      number: 58,
-      result: 'LVIII',
+      arabic: 58,
+      roman: 'LVIII',
     },
     {
-      number: 100,
-      result: 'C',
+      arabic: 100,
+      roman: 'C',
     },
     {
-      number: 500,
-      result: 'D',
+      arabic: 500,
+      roman: 'D',
     },
     {
-      number: 998,
-      result: 'CMXCVIII',
+      arabic: 998,
+      roman: 'CMXCVIII',
     },
   ]
 
   testCases.forEach((value) => {
-    test(`When Convert "${value.number}", should return "${value.result}"`, () => {
+    test(`When Convert "${value.arabic}", should return "${value.roman}"`, () => {
       //Arrange
-      const expected = value.result
+      const expected = value.roman
       //Act
-      const actual = expect(Arabic.convertToRoman(value.number))
+      const actual = expect(Arabic.convertToRoman(value.arabic))
       //Assert
       actual.toBe(expected)
     })
