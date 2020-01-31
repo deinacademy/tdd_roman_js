@@ -1,6 +1,10 @@
-const Arabic = require('../resources/js/Arabic')
-
 describe('Arabic', () => {
+  const Arabic = require('../resources/js/Arabic')
+
+  test('Convert method was defined', () => {
+    expect(Arabic.convertToRoman).toBeDefined()
+  })
+
   const testCases = [
     {
       arabic: 1,
