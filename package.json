@@ -8,8 +8,9 @@
   },
   "scripts": {
     "test": "jest",
-    "test:coverage": "jest --coverage",
-    "test:watch": "jest --watch"
+    "test:c": "jest --coverage",
+    "test:w": "jest --watch",
+    "test:cw": "jest --coverage --watch"
   },
   "repository": {
     "type": "git",
@@ -22,9 +23,6 @@
   },
   "homepage": "https://github.com/equiman/tdd_roman_js#readme",
   "devDependencies": {
-    "@babel/core": "^7.8.3",
-    "@babel/preset-env": "^7.8.3",
-    "babel-jest": "^25.1.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-prettier": "^3.1.2",
