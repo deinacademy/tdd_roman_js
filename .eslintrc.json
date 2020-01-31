@@ -51,8 +51,8 @@
         "quotes": [
             "error",
             "single",
-            { "avoidEscape": false, "allowTemplateLiterals": false }
+            { "avoidEscape": true, "allowTemplateLiterals": false }
         ],
-        "semi": ["error", "always"]
+        "semi": ["error", "never"]
     }
 }

@@ -3,8 +3,10 @@
     "cSpell.userWords": [],
     "cSpell.words": [
         "CMXCIX",
+        "CMXCVIII",
         "Equiman",
         "Kata",
+        "LVIII",
         "LXXX",
         "Parens",
         "Prettierrc",
@@ -30,16 +32,15 @@
     "javascript.validate.enable": false,
     "javascript.format.enable": false,
     "prettier.configPath": ".prettierrc",
-    "prettier.disableLanguages": ["html", "css", "scss"],
     "search.exclude": {
         "**/coverage": true,
-        "**/node_modules": true,
+        "**/node_modules": true
     },
     "todo-tree.filtering.excludeGlobs": [
-        "**/node_modules/**",
+        "**/node_modules/**"
     ],
     "todo-tree.filtering.includeGlobs": [
-        "**/resources/**",
+        "**/resources/**"
     ],
     "todo-tree.general.tags": [
         "TODO",
@@ -50,23 +51,23 @@
         "type": "tag",
         "fontWeight": "bold",
         "foreground": "black",
-        "opacity": 90,
+        "opacity": 90
     },
     "todo-tree.highlights.customHighlight": {
         "TODO": {
             "background": "#FFD703",
             "iconColour": "#FFD703",
-            "icon": "book",
+            "icon": "book"
         },
         "FIXME": {
             "background": "#FF01FF",
             "iconColour": "#FF01FF",
-            "icon": "bug",
+            "icon": "bug"
         },
         "MARK": {
             "background": "#157EFB",
             "iconColour": "#157EFB",
-            "icon": "tag",
+            "icon": "tag"
         }
     },
     "testExplorer.errorDecoration": false,
