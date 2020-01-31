@@ -12,7 +12,7 @@ class Arabic {
     result += this.PlaceValues(ones, Roman['ones']);
 
     if (!result) {
-      throw new Error('Not implemented exception');
+      throw new Error("Value can't be converted");
     }
 
     return result;
