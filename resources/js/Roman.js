@@ -14,6 +14,6 @@ const Roman = {
     quinque: 'D',
     decem: 'M',
   },
-};
+}
 
-module.exports = Roman;
+module.exports = Roman

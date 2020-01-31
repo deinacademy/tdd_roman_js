@@ -1,4 +1,4 @@
-const Arabic = require('../resources/js/Arabic');
+const Arabic = require('../resources/js/Arabic')
 
 describe('Arabic', () => {
   const testCases = [
@@ -66,34 +66,34 @@ describe('Arabic', () => {
       number: 998,
       result: 'CMXCVIII',
     },
-  ];
+  ]
 
   testCases.forEach((value) => {
     test(`When Convert "${value.number}", should return "${value.result}"`, () => {
       //Arrange
-      const expected = value.result;
+      const expected = value.result
       //Act
-      const actual = expect(Arabic.ConvertToRoman(value.number));
+      const actual = expect(Arabic.convertToRoman(value.number))
       //Assert
-      actual.toBe(expected);
-    });
-  });
+      actual.toBe(expected)
+    })
+  })
 
-  const errorCases = ['', 0, -1, 'A'];
+  const errorCases = ['', 0, -1, 'A']
   errorCases.forEach((value) => {
     test(`When Convert "${value}", should return an Error`, () => {
       //Arrange
-      const expected = Error;
+      const expected = Error
       //Act
-      let error;
+      let error
       try {
-        Arabic.ConvertToRoman(value);
+        Arabic.convertToRoman(value)
       } catch (e) {
-        error = e;
+        error = e
       }
-      const actual = expect(error);
+      const actual = expect(error)
       //Assert
-      actual.toBeInstanceOf(expected);
-    });
-  });
-});
+      actual.toBeInstanceOf(expected)
+    })
+  })
+})
