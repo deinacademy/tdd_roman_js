@@ -2,6 +2,10 @@ const Roman = require('./Roman');
 
 class Arabic {
   static ConvertToRoman(number) {
+    if (!Number.isInteger(number)) {
+      throw new Error('Value is not a integer number');
+    }
+
     const hundreds = parseInt((number / 100) % 10);
     const tens = parseInt((number / 10) % 10);
     const ones = parseInt((number / 1) % 10);
