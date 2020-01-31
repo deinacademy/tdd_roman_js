@@ -69,13 +69,31 @@ describe('Arabic', () => {
   ];
 
   testCases.forEach((value) => {
-    test(`When Convert ${value.number}, should return ${value.result}`, () => {
+    test(`When Convert "${value.number}", should return "${value.result}"`, () => {
       //Arrange
       const expected = value.result;
       //Act
       const actual = expect(Arabic.ConvertToRoman(value.number));
       //Assert
       actual.toBe(expected);
+    });
+  });
+
+  const errorCases = ['', 0, -1];
+  errorCases.forEach((value) => {
+    test(`When Convert "${value}", should return an Error`, () => {
+      //Arrange
+      const expected = Error;
+      //Act
+      let error;
+      try {
+        Arabic.ConvertToRoman(value);
+      } catch (e) {
+        error = e;
+      }
+      const actual = expect(error);
+      //Assert
+      actual.toBeInstanceOf(expected);
     });
   });
 });
