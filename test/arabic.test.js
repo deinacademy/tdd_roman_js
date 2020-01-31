@@ -79,7 +79,7 @@ describe('Arabic', () => {
     });
   });
 
-  const errorCases = ['', 0, -1];
+  const errorCases = ['', 0, -1, 'A'];
   errorCases.forEach((value) => {
     test(`When Convert "${value}", should return an Error`, () => {
       //Arrange
