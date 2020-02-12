@@ -25,28 +25,28 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>29/29</span>
+                <span class='fraction'>27/27</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>15/15</span>
+                <span class='fraction'>19/19</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>28/28</span>
+                <span class='fraction'>26/26</span>
             </div>
         
             
@@ -113,34 +113,32 @@
 <a name='L54'></a><a href='#L54'>54</a>
 <a name='L55'></a><a href='#L55'>55</a>
 <a name='L56'></a><a href='#L56'>56</a>
-<a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L57'></a><a href='#L57'>57</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">31x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">54x</span>
-<span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-yes">31x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">31x</span>
+<span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">12x</span>
@@ -162,11 +160,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">47x</span>
-<span class="cline-any cline-yes">47x</span>
 <span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">47x</span>
+<span class="cline-any cline-yes">24x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -174,47 +172,46 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const Roman = require('./Roman')
 &nbsp;
 class Arabic {
-  static convertToRoman(number) {
-    if (!Number.isInteger(number)) {
-      throw new Error('Value is not a integer number')
+  static convertToRoman(value) {
+    if (value &lt; 1 || !Number.isInteger(value)) {
+      throw new Error('Value is not a positive integer number')
     }
 &nbsp;
-    const hundreds = parseInt((number / 100) % 10)
-    const tens = parseInt((number / 10) % 10)
-    const ones = parseInt((number / 1) % 10)
-&nbsp;
     let result = ''
-    result += this.placeValues(hundreds, Roman['hundreds'])
-    result += this.placeValues(tens, Roman['tens'])
-    result += this.placeValues(ones, Roman['ones'])
+    let length = value.toString().length
+    ;[...('' + value)].forEach((number, index) =&gt; {
+      result += this.placeValues(parseInt(number), length - index)
+    })
 &nbsp;
-    if (!result) {
+    if (!result || value &gt; 1000) {
       throw new Error("Value can't be converted")
     }
 &nbsp;
     return result
   }
 &nbsp;
-  static placeValues(number, symbols) {
+  static placeValues(number, place) {
+    console.log(number + ' - ' + typeof number + ' - ' + JSON.stringify(place))
+&nbsp;
     if (number &lt;= 3) {
-      return this.repeatLiteral(number, symbols.unum)
+      return this.repeatLiteral(number, Roman[place].unum)
     }
 &nbsp;
     if (number === 4) {
-      return `${symbols.unum}${symbols.quinque}`
+      return `${Roman[place].unum}${Roman[place].quinque}`
     }
 &nbsp;
     if (number === 5) {
-      return symbols.quinque
+      return Roman[place].quinque
     }
 &nbsp;
     if (6 &lt;= number &amp;&amp; number &lt;= 8) {
-      return `${symbols.quinque}${this.repeatLiteral(number - 5, symbols.unum)}`
+      return `${Roman[place].quinque}${this.repeatLiteral(number - 5, Roman[place].unum)}`
     }
 &nbsp;
     /* istanbul ignore else*/
     if (number === 9) {
-      return `${symbols.unum}${symbols.decem}`
+      return `${Roman[place].unum}${Roman[place + 1].unum}`
     }
   }
 &nbsp;
@@ -235,7 +232,7 @@ module.exports = Arabic
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Jan 31 2020 12:49:49 GMT-0500 (Colombia Standard Time)
+                at Wed Feb 12 2020 15:03:30 GMT-0500 (Colombia Standard Time)
             </div>
         </div>
         <script src="prettify.js"></script>
