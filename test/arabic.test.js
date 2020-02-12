@@ -2,22 +2,14 @@ describe('Arabic', () => {
   const Arabic = require('../resources/js/Arabic')
 
   test('Convert method was defined', () => {
-    expect(Arabic.convertToRoman).toBeDefined()
+    //Arrange
+    //Act
+    const result = expect(Arabic.convertToRoman)
+    //Assert
+    result.toBeDefined()
   })
 
   const testCases = [
-    {
-      arabic: 1,
-      roman: 'I',
-    },
-    {
-      arabic: 2,
-      roman: 'II',
-    },
-    {
-      arabic: 3,
-      roman: 'III',
-    },
     {
       arabic: 4,
       roman: 'IV',
@@ -70,6 +62,10 @@ describe('Arabic', () => {
       arabic: 998,
       roman: 'CMXCVIII',
     },
+    {
+      arabic: 1000,
+      roman: 'M',
+    },
   ]
 
   testCases.forEach((value) => {
@@ -83,7 +79,7 @@ describe('Arabic', () => {
     })
   })
 
-  const errorCases = ['', 0, -1, 'A']
+  const errorCases = ['', 0, -1, 'A', 1001]
   errorCases.forEach((value) => {
     test(`When Convert "${value}", should return an Error`, () => {
       //Arrange

@@ -1,47 +1,46 @@
 const Roman = require('./Roman')
 
 class Arabic {
-  static convertToRoman(number) {
-    if (!Number.isInteger(number)) {
-      throw new Error('Value is not a integer number')
+  static convertToRoman(value) {
+    if (value < 1 || !Number.isInteger(value)) {
+      throw new Error('Value is not a positive integer number')
     }
 
-    const hundreds = parseInt((number / 100) % 10)
-    const tens = parseInt((number / 10) % 10)
-    const ones = parseInt((number / 1) % 10)
-
     let result = ''
-    result += this.placeValues(hundreds, Roman['hundreds'])
-    result += this.placeValues(tens, Roman['tens'])
-    result += this.placeValues(ones, Roman['ones'])
+    let length = value.toString().length
+    ;[...('' + value)].forEach((number, index) => {
+      result += this.placeValues(parseInt(number), length - index)
+    })
 
-    if (!result) {
+    if (!result || value > 1000) {
       throw new Error("Value can't be converted")
     }
 
     return result
   }
 
-  static placeValues(number, symbols) {
+  static placeValues(number, place) {
+    console.log(number + ' - ' + typeof number + ' - ' + JSON.stringify(place))
+
     if (number <= 3) {
-      return this.repeatLiteral(number, symbols.unum)
+      return this.repeatLiteral(number, Roman[place].unum)
     }
 
     if (number === 4) {
-      return `${symbols.unum}${symbols.quinque}`
+      return `${Roman[place].unum}${Roman[place].quinque}`
     }
 
     if (number === 5) {
-      return symbols.quinque
+      return Roman[place].quinque
     }
 
     if (6 <= number && number <= 8) {
-      return `${symbols.quinque}${this.repeatLiteral(number - 5, symbols.unum)}`
+      return `${Roman[place].quinque}${this.repeatLiteral(number - 5, Roman[place].unum)}`
     }
 
     /* istanbul ignore else*/
     if (number === 9) {
-      return `${symbols.unum}${symbols.decem}`
+      return `${Roman[place].unum}${Roman[place + 1].unum}`
     }
   }
 

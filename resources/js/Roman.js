@@ -1,18 +1,19 @@
 const Roman = {
-  ones: {
+  '1': {
     unum: 'I',
     quinque: 'V',
-    decem: 'X',
   },
-  tens: {
+  '2': {
     unum: 'X',
     quinque: 'L',
-    decem: 'C',
   },
-  hundreds: {
+  '3': {
     unum: 'C',
     quinque: 'D',
-    decem: 'M',
+  },
+  '4': {
+    unum: 'M',
+    quinque: '',
   },
 }
 
