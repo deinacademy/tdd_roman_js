@@ -6,11 +6,12 @@ class Arabic {
       throw new Error('Value is not a positive integer number')
     }
 
-    let result = ''
     let length = value.toString().length
-    ;[...`${value}`].forEach((number, index) => {
-      result += this.placeValues(parseInt(number), length - index)
-    })
+    let result = [...`${value}`]
+      .map((number, index) => {
+        return this.placeValues(parseInt(number), length - index)
+      })
+      .join('')
 
     if (!result || value > 1000) {
       throw new Error("Value can't be converted")
