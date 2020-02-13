@@ -8,7 +8,7 @@ class Arabic {
 
     let result = ''
     let length = value.toString().length
-    ;[...('' + value)].forEach((number, index) => {
+    ;[...`${value}`].forEach((number, index) => {
       result += this.placeValues(parseInt(number), length - index)
     })
 
@@ -20,8 +20,6 @@ class Arabic {
   }
 
   static placeValues(number, place) {
-    console.log(number + ' - ' + typeof number + ' - ' + JSON.stringify(place))
-
     if (number <= 3) {
       return this.repeatLiteral(number, Roman[place].unum)
     }
