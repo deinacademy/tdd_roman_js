@@ -7,13 +7,11 @@ class Arabic {
     }
 
     let length = value.toString().length
-    let result = [...`${value}`]
-      .map((number, index) => {
-        return this.placeValues(parseInt(number), length - index)
-      })
-      .join('')
+    let result = [...`${value}`].reduce((accumulator, number, index) => {
+      return `${accumulator}${this.placeValues(parseInt(number), length - index)}`
+    }, '')
 
-    if (!result || value > 1000) {
+    if (!result || value > 3999) {
       throw new Error("Value can't be converted")
     }
 
